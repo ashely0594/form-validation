@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for Icons -->
+    <script
+      src="https://kit.fontawesome.com/d8f052c6cf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="text/javascript" src="index.js"></script>
+    <!-- <script defer type="text/javascript" src="index.js"></script> -->
+
+  </head>
+  <body>
+    <!-- Container for entire form. -->
+    <div class="form-container">
+      <!-- Registration Side -->
+      <div>
+        <h1>Register</h1>
+        <p>Please provide your information below.</p>
+
+        <!-- Registration Form -->
+        <form id="registration">
+          <!------------- USER-NAME --------------->
+          <input
+            name="username"
+            type="text"
+            id="username"
+            placeholder="Username"
+            minlength="4"
+            maxlength="10"
+            pattern="^(?=.*[a-zA-Z])(?=.*[a-zA-Z]).{2,}$"
+            title="Username must contain at least two unique characters and cannot contain special characters or whitespace."
+            required
+          />
+          <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
+
+          <!-- //==================================================================================== -->
+
+          <!-- step 2 Registration Form - Email Validation: -->
+          <input
+            name="email"
+            type="email"
+            id="email"
+            placeholder="Email"
+            pattern="^(?!.*@example\.com$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="The email must be a valid email address. The email must not be
+          domain example.com"
+            required
+          />
+          <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
+          ><br />
+
+          <!-- //==================================================================================== -->
+            <!-- password -->
+          <input
+            name="password"
+            id="password"
+            type="text"
+            placeholder="Password"
+            minlength="12"
+            maxlength="20"
+            title="The email must be a valid email address.
+            The email must not be from the domain example.com."
+            required
+          />
+          <span class="input-icon"><i class="fa-solid fa-key"></i></span><br />
+              <!-- //------------------------============ -->
+          <input
+            name="passwordCheck"
+            type="text"
+            placeholder="Repeat Password"
+            required
+          />
+          <span class="input-icon"><i class="fa-solid fa-key"></i></span
+          ><br /><br />
+          <!-- //==================================================================================== -->
+
+          <div class="flex-row">
+            <input name="terms" type="checkbox" required />
+            <label for="terms"
+              >I agree to the&nbsp;<a href="#">Terms of Use</a>.</label
+            >
+            <input type="submit" value="Register" required />
+          </div>
+        </form>
+      </div>
+      <!-- //================================== LOGIN SECTION ================================================== -->
+
+      <!-- Login Side -->
+      <div>
+        <h1>Login</h1>
+        <p>Login using your account information.</p>
+
+        <!-- Login Form -->
+        <form id="login" style="border-bottom: 1px solid lightgray">
+          <input
+            name="username"
+            type="text"
+            placeholder="Username"
+            maxlength="4"
+            title="Username must be more than 4 characters long"
+            pattern="^(?=.*[a-zA-Z])(?=.*[a-zA-Z]).{2,}$"
+            title="Username can not be blank"
+            required
+          />
+          <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
+
+          <input name="password" type="text" placeholder="Password" required  title="Password can not be blank"/>
+          <span class="input-icon"><i class="fa-solid fa-key"></i></span
+          ><br /><br />
+
+          <div class="flex-row">
+            <input name="persist" type="checkbox" required />
+            <label for="persist">Keep me logged in.</label>
+            <input type="submit" value="Login" required />
+          </div>
+          <br /><br />
+        </form>
+
+        <p>Forgot your <a href="#">Username</a> or <a href="#">Password?</a></p>
+      </div>
+    </div>
+
+    <!-- Error Display Container -->
+    <div id="errorDisplay"></div>
+  </body>
+</html>
